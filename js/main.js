@@ -18,13 +18,25 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderListings(listings) {
     const container = document.getElementById('listings-container');
     container.innerHTML = '';
+
     const cardsHTML = listings.map(listing => {
+      const shortDescription = listing.description.length > 150
+      ? `${listing.description.substring(0, 150)}...`
+      : listing.description;
+
+      const amenitiesText = listing.amenities.slice(2, -2).split('", "').slice(0, 3).join(', ') + '...';
+
       return `
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
           <div class="card h-100">
             <img src="${listing.picture_url}" class="card-img-top" alt="${listing.name}">
-            <div class="card-body d-flex flex-column"> 
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">${listing.name}</h5>
+              
+              <p class="card-text flex-grow-1">${shortDescription}</p>
+              
+              <p class="card-text"><small class="text-muted"><strong>Amenities:</strong> ${amenitiesText}</small></p>
+
               <p class="card-text"><small class="text-muted"><strong>${listing.price}</strong> / night</small></p>
               
               <div class="d-flex align-items-center justify-content-between mt-auto">
