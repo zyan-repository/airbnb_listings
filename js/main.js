@@ -133,7 +133,7 @@ function renderListings(listings) {
     priceP.className = 'card-text';
     const priceSmall = document.createElement('small');
     priceSmall.className = 'text-muted';
-    priceSmall.innerHTML = `<strong>${price}</strong>`; // innerHTML is ok here too
+    priceSmall.innerHTML = `<strong>${price}</strong>`;
     priceP.appendChild(priceSmall);
 
     const hostDiv = document.createElement('div');
@@ -141,7 +141,7 @@ function renderListings(listings) {
 
     const hostSpan = document.createElement('span');
     hostSpan.className = 'fw-bold';
-    hostSpan.textContent = `Host: ${hostName}`; // Use textContent for safety
+    hostSpan.textContent = `Host: ${hostName}`;
 
     const hostImg = document.createElement('img');
     hostImg.src = hostThumbnail;

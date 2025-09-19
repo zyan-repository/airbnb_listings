@@ -22,3 +22,5 @@ The project is deployed on GitHub Pages and can be viewed live here:
 * **Dynamic Data Loading**: Uses the `fetch` API with `async/await` to load listing data from a JSON file without reloading the page.
 * **Responsive Layout**: Built with the Bootstrap 5 Grid system (`.container`, `.row`, `.col-*`) to ensure a great viewing experience on all devices, from mobile phones to desktops.
 * **Component-Based Display**: Each listing is rendered as a Bootstrap Card, showing key information like name, price, host details, description, and amenities.
+
+AI usage:  Refactored the rendering logic from HTML string concatenation to programmatic DOM manipulation: I originally used an HTML string to build the page, but it kept breaking because of bad data in the JSON file. I asked Gemini for help, and its suggestion to create the elements programmatically solved the problem.
